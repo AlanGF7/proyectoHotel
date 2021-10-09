@@ -1,17 +1,18 @@
-<%@page import="java.util.List"%>
+<%@page import="java.util.*"%>
 <%@page import="datos.Registro"%>
 
 
 <%-- Agregar delcaraciones JSP(Atributos o métodos)--%>
-<%!
-    Registro registro = new Registro();
 
-    
-    
-%>
 
 <%
+    String[] books;
+    books = request.getParameterValues("OpHabitacion");
     int i = 0;
+    int op = 0;
+    int[] mi = new int[10];
+
+
 %>
 
 
@@ -27,41 +28,71 @@
         <h1>Aquí se muestran todas las habitaciones</h1>
 
         <!--jsp:getProperty name="Registro" property=""/-->
-        <%
-            String ocupacion[] = request.getParameterValues("OpHabitacion");
+        <%            //String ocupacion[] = request.getParameterValues("OpHabitacion");
+            /* Map Mapita = request.getParameterMap();
+            Set s = Mapita.entrySet();
+            Iterator it = s.iterator();
+
+            while (it.hasNext()) {
+
+                Map.Entry<String, String[]> entry = (Map.Entry<String, String[]>) it.next();
+
+                String key = entry.getKey();
+
+                String[] value = entry.getValue();
+
+                
+
+            }*/
+            if (books != null) {
+                for (; i < books.length; i++) {
+                    op = Integer.parseInt(books[i]);
+                    out.println("<b> Si: " + books[i] + "<b>");
+                }
+            }
+
+
         %>
 
         <br>
+        <br>
 
-
-        <div class="jumbotron">
-            <br>
-            <div class="container">
-                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-
-                    <%                        
-                        for (; i < ocupacion.length; i++) {
-                            if (ocupacion[i] == "true") {
-                    %>
-                    <div class="col">
-                        <div class="p-3 border bg-danger text-white">Habitación <%= i%></div>
-                        <%
-                        }else{
-                        %>
-                        <div class="p-3 border bg-success text-white">Habitación <%= i%></div>
-
-                        <%
+        <div class="container">
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                <%                    
+                    for (; i < books.length; i++) {
+                        if (books[i] != null) {
+                              op = Integer.parseInt(books[i]);
                             }
-                        %>
-                        </div>
-                        <%
-                            }
-                        %>
+                        
+                    }
+                    for (int j = 0; j <= 9; j++) {
+                      
+                        if (op == j) {
+                %>
+
+                <div class="col">
+                    <div class="p-3  bg-danger">Habitación <%= j%></div>
                 </div>
+
+                <%
+
+                } else {
+
+                %>
+                <div class="col">
+                    <div class="p-3  bg-success">Habitación <%= j%></div>
+                </div>                
+
+                <%
+                        }
+                    }
+
+
+                %>
+
             </div>
         </div>
-
-
 
     </body>
 </html>

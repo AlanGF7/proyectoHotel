@@ -1,9 +1,12 @@
 package datos;
 
+import java.util.List;
+
 public class Registro {
 
     private int numHabitacion;
     private boolean activo;
+    List Ocupada = null ;
     
     public Registro(){}
     
@@ -11,6 +14,7 @@ public class Registro {
     public Registro(int num, boolean act){
         this.numHabitacion = num;
         this.activo = act;
+        getHab(act);
     }
     
     public boolean isActivo() {
@@ -18,6 +22,7 @@ public class Registro {
     }
 
     public void setActivo(boolean activo) {
+        getHab(activo);
         this.activo = activo;
     }
     
@@ -29,6 +34,8 @@ public class Registro {
         this.numHabitacion = numHabitacion;
     }
     
-    
+    public void getHab(boolean llave){
+        Ocupada.add(llave);
+    }
     
 }

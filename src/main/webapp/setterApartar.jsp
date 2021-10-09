@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,45 +17,51 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="" >
+                            
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >
                             <label class="form-check-label" >Habitación 1 </label>
+                          
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="" >
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="2" >
                             <label class="form-check-label" >Habitación 2 </label>
+                           
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="" checked>
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="3">
                             <label class="form-check-label" >Habitación 3 </label>
+                           
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="" unchecked>
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="4">
                             <label class="form-check-label" >Habitación 4 </label>
+                            
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="" >
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="5" >
                             <label class="form-check-label" >Habitación 5 </label>
+                            
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="hab6">
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="6" >
                             <label class="form-check-label" for="flexCheckDefault">Habitación 6 </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="hab7">
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="7" >
                             <label class="form-check-label" for="flexCheckDefault">Habitación 7 </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="hab8">
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="8" >
                             <label class="form-check-label" for="flexCheckDefault">Habitación 8 </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="hab9">
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="9" >
                             <label class="form-check-label" for="flexCheckDefault">Habitación 9 </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="hab10">
+                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="10">
                             <label class="form-check-label" for="flexCheckDefault">Habitación 10 </label>
                         </div>
                     </div>
@@ -63,10 +70,10 @@
                 <br/>
                 <br/>
 
-            
-                
 
                 <button type="submit" class="btn btn-primary">Submit</button>
+                
+                
             </form>
         </div>
 
