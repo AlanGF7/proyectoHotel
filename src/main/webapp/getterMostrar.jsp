@@ -1,19 +1,24 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.*"%>
 <%@page import="datos.Registro"%>
 
-
-<%-- Agregar delcaraciones JSP(Atributos o métodos)--%>
-
-
 <%
-    String[] books;
+    int[] espera = new int[9];
+    Registro regis = new Registro();
+    espera = regis.getHabitacion();
+
+%>
+
+<%    String[] books;
     books = request.getParameterValues("OpHabitacion");
     int i = 0;
     int op = 0;
-    int[] mi = new int[10];
+    int M2 = 0;
+    int[] mi = new int[books.length];
 
-
+    boolean salida = false;
 %>
+
 
 
 <!DOCTYPE html>
@@ -27,31 +32,36 @@
         <jsp:useBean id="Habitaciones" class="datos.Registro" scope="session"/>
         <h1>Aquí se muestran todas las habitaciones</h1>
 
-        <!--jsp:getProperty name="Registro" property=""/-->
-        <%            //String ocupacion[] = request.getParameterValues("OpHabitacion");
-            /* Map Mapita = request.getParameterMap();
-            Set s = Mapita.entrySet();
-            Iterator it = s.iterator();
 
-            while (it.hasNext()) {
+        <%
 
-                Map.Entry<String, String[]> entry = (Map.Entry<String, String[]>) it.next();
-
-                String key = entry.getKey();
-
-                String[] value = entry.getValue();
-
-                
-
-            }*/
             if (books != null) {
                 for (; i < books.length; i++) {
                     op = Integer.parseInt(books[i]);
-                    out.println("<b> Si: " + books[i] + "<b>");
+                    mi[i] = op;
+                    //  out.println("<b> Si: " + books[i] + "<b>");
+                    out.print("<br>");
+                    if (op == 0) {
+                        out.print("APAGADO: " + books[i] + ", Numero: " + i);
+                    } else {
+                        out.print("PRENDIDO: " + books[i] + ", Numero: " + i);
+                    }
+
                 }
             }
 
+            if (espera != null) {
+                for (int p = 0; p < espera.length; p++) {
+                    M2 = espera[p];
+                    out.print("<br>");
+                    if (M2 == 0) {
+                        out.print("Num encendio: " + espera[p] + ", Numero: " + p);
+                    } else {
+                        out.print("Num Apagado: " + espera[p] + ", Numero: " + p);
+                    }
 
+                }
+            }
         %>
 
         <br>
@@ -59,39 +69,37 @@
 
         <div class="container">
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-                <%                    
-                    for (; i < books.length; i++) {
-                        if (books[i] != null) {
-                              op = Integer.parseInt(books[i]);
-                            }
-                        
-                    }
-                    for (int j = 0; j <= 9; j++) {
-                      
-                        if (op == j) {
+                <%                    for (int j = 0; j < mi.length; j++) {
+
+                        if (mi[j] == 1) {
                 %>
 
                 <div class="col">
-                    <div class="p-3  bg-danger">Habitación <%= j%></div>
+                    <div class="p-3 fw-normal bg-danger">Habitación <%= j%></div>
                 </div>
 
                 <%
-
                 } else {
-
                 %>
                 <div class="col">
-                    <div class="p-3  bg-success">Habitación <%= j%></div>
+                    <div class="p-3 fw-normal bg-success">Habitación <%= j%></div>
                 </div>                
 
                 <%
                         }
                     }
-
-
                 %>
 
             </div>
+
+            <a class="btn btn-success" href="index.html" role="button">Regresar a inicio</a>
+            <a class="btn btn-warning" href="setterApartar.jsp" role="button" onclick="!salida">Regresar a la selección</a>
+            <%
+                if (salida) {
+                    mi.equals(0);
+                    salida = !salida;
+                }
+            %>
         </div>
 
     </body>

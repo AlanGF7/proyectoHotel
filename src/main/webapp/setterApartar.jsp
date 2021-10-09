@@ -1,4 +1,17 @@
+<%@page import="datos.Registro"%>
 <%@page import="java.util.List"%>
+
+<%!
+    int[] reCuarto = null;
+    int miau = 0;
+    boolean llave = false;
+    Registro registro = new Registro();
+
+    public void guardar(int[] valor) {
+        registro.setHabitacion(valor);
+    }
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,52 +30,71 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-check">
-                            
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <label class="form-check-label" >Habitación 0 </label>
+
+                        </div>
+                        <div class="form-check">
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
                             <label class="form-check-label" >Habitación 1 </label>
-                          
+
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="2" >
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
                             <label class="form-check-label" >Habitación 2 </label>
-                           
+
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="3">
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
                             <label class="form-check-label" >Habitación 3 </label>
-                           
+
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="4">
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
                             <label class="form-check-label" >Habitación 4 </label>
-                            
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="5" >
-                            <label class="form-check-label" >Habitación 5 </label>
-                            
+
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="6" >
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <label class="form-check-label" for="flexCheckDefault">Habitación 5 </label>
+                        </div>
+                        <div class="form-check">
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
                             <label class="form-check-label" for="flexCheckDefault">Habitación 6 </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="7" >
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
                             <label class="form-check-label" for="flexCheckDefault">Habitación 7 </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="8" >
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
                             <label class="form-check-label" for="flexCheckDefault">Habitación 8 </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="9" >
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
+                            <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
+                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
                             <label class="form-check-label" for="flexCheckDefault">Habitación 9 </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" name="OpHabitacion" type="checkbox" value="10">
-                            <label class="form-check-label" for="flexCheckDefault">Habitación 10 </label>
                         </div>
                     </div>
                 </div>
@@ -70,10 +102,25 @@
                 <br/>
                 <br/>
 
+                <%
+                    if (llave) {
+                        String[] cuartitos;
+                        cuartitos = request.getParameterValues("OpHabitacion");
+                        if (cuartitos != null) {
+                            for (int i = 0; i < cuartitos.length; i++) {
+                                miau = Integer.parseInt(cuartitos[i]);
+                                reCuarto[i] = miau;
+                            }
+                            guardar(reCuarto);
+                        }
+                        llave = !llave;
+                    }
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-                
-                
+                %>
+
+                <button type="submit" class="btn btn-primary" onclick="!llave">Submit</button>
+
+
             </form>
         </div>
 
