@@ -32,6 +32,7 @@
         <jsp:useBean id="Habitaciones" class="datos.Registro" scope="session"/>
         <h1>Aquí se muestran todas las habitaciones</h1>
 
+        DAME: <jsp:getProperty name="Habitaciones" property="habitacion"/>
 
         <%
 
@@ -55,9 +56,9 @@
                     M2 = espera[p];
                     out.print("<br>");
                     if (M2 == 0) {
-                        out.print("Num encendio: " + espera[p] + ", Numero: " + p);
-                    } else {
                         out.print("Num Apagado: " + espera[p] + ", Numero: " + p);
+                    } else {
+                        out.print("Num Encendio:  " + espera[p] + ", Numero: " + p);
                     }
 
                 }

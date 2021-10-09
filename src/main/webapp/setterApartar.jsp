@@ -101,9 +101,10 @@
 
                 <br/>
                 <br/>
-
+                
+                
                 <%
-                    if (llave) {
+                   
                         String[] cuartitos;
                         cuartitos = request.getParameterValues("OpHabitacion");
                         if (cuartitos != null) {
@@ -114,11 +115,13 @@
                             guardar(reCuarto);
                         }
                         llave = !llave;
-                    }
+                  
 
                 %>
+                
+                <jsp:setProperty name="Habitaciones" property="habitacion" value="<%=reCuarto%>"/>
 
-                <button type="submit" class="btn btn-primary" onclick="!llave">Submit</button>
+                <button type="submit" class="btn btn-primary" onclick="guardar(reCuarto )" >Submit</button>
 
 
             </form>
