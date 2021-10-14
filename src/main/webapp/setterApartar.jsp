@@ -10,6 +10,30 @@
     public void guardar(int[] valor) {
         registro.setHabitacion(valor);
     }
+
+    String Respuesta = "FUCK ";
+
+    boolean AH = false;
+    String HE = "DESOCUPADA";
+    boolean AH2 = false;
+    String HE2 = "DESOCUPADA";
+    boolean AH3 = false;
+    
+    boolean AH4 = false;
+    String HE4 = "DESOCUPADA";
+    boolean AH5 = false;
+    String HE5 = "DESOCUPADA";
+    boolean AH6 = false;
+    String HE6 = "DESOCUPADA";
+    boolean AH7 = false;
+    String HE7 = "DESOCUPADA";
+    boolean AH8 = false;
+    String HE8 = "DESOCUPADA";
+    boolean AH9 = false;
+    String HE9 = "DESOCUPADA";
+    boolean AH10 = false;
+    String HE10 = "DESOCUPADA";
+
 %>
 
 <!DOCTYPE html>
@@ -23,6 +47,16 @@
         <jsp:useBean id="Habitaciones" class="datos.Registro" scope="session"/>
         <h1>Aquí seleccionaras la habitación</h1>
 
+        <%!            public String getCambio(boolean mia) {
+                if (mia) {
+                    return Respuesta = "Desocupada";
+                } else {
+                    return Respuesta = "Ocupada";
+                }
+            }
+                                                        %>
+
+
 
         <div class="container">
 
@@ -32,35 +66,78 @@
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+
+                                if (!AH) {
+                                    HE = "OCUPADA";
+                                } else {
+                                    HE = "DESOCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion0" onclick="!AH" value="<%=HE%>">
+
                             <label class="form-check-label" >Habitación 0 </label>
 
                         </div>
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+
+                                if (AH2) {
+                                    HE2 = "DESOCUPADA";
+                                } else {
+                                    HE2 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion1" onclick="!AH2" value="<%=HE2%>">
+
                             <label class="form-check-label" >Habitación 1 </label>
 
                         </div>
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+                                String HE3 = "DESOCUPADA";
+                                if (AH3) {
+                                    HE3 = "DESOCUPADA";
+                                } else {
+                                    HE3 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion2" onclick="!AH3" value="<%=HE3%>">
+
                             <label class="form-check-label" >Habitación 2 </label>
 
                         </div>
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+                                if (AH4) {
+                                    HE4 = "DESOCUPADA";
+                                } else {
+                                    HE4 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion3" onclick="!AH4" value="<%=HE4%>">
+
                             <label class="form-check-label" >Habitación 3 </label>
 
                         </div>
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+                                if (AH5) {
+                                    HE5 = "DESOCUPADA";
+                                } else {
+                                    HE5 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion4" onclick="!AH5" value="<%=HE5%>">
+
                             <label class="form-check-label" >Habitación 4 </label>
 
                         </div>
@@ -69,31 +146,71 @@
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+                                if (AH6) {
+                                    HE6 = "DESOCUPADA";
+                                } else {
+                                    HE6 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion5" onclick="!AH6" value="<%=HE6%>">
+
                             <label class="form-check-label" for="flexCheckDefault">Habitación 5 </label>
                         </div>
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+                                if (AH7) {
+                                    HE7 = "DESOCUPADA";
+                                } else {
+                                    HE7 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion6" onclick="!AH7" value="<%=HE7%>">
+
                             <label class="form-check-label" for="flexCheckDefault">Habitación 6 </label>
                         </div>
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+                                if (AH8) {
+                                    HE8 = "DESOCUPADA";
+                                } else {
+                                    HE8 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion7" onclick="!AH8" value="<%=HE8%>">
+
                             <label class="form-check-label" for="flexCheckDefault">Habitación 7 </label>
                         </div>
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+                                if (AH9) {
+                                    HE9 = "DESOCUPADA";
+                                } else {
+                                    HE9 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion8" onclick="!AH9" value="<%=HE9%>">
+
                             <label class="form-check-label" for="flexCheckDefault">Habitación 8 </label>
                         </div>
                         <div class="form-check">
                             <!-- <input class="form-check-input" name="OpHabitacion" type="hidden" value="0" > -->
                             <!-- <input class="form-check-input" name="OpHabitacion" type="checkbox" value="1" >  -->
-                            <input class="form-check-input" type="hidden" name="OpHabitacion" value="0"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value = 1 - this.previousSibling.value">
+                            <%
+                                if (AH10) {
+                                    HE10 = "DESOCUPADA";
+                                } else {
+                                    HE10 = "OCUPADA";
+                                }
+                            %>
+                            <input class="form-check-input" type="checkbox" name="OpHabitacion9" onclick="!AH10" value="<%=HE10%>">
+
                             <label class="form-check-label" for="flexCheckDefault">Habitación 9 </label>
                         </div>
                     </div>
@@ -101,27 +218,12 @@
 
                 <br/>
                 <br/>
-                
-                
-                <%
-                   
-                        String[] cuartitos;
-                        cuartitos = request.getParameterValues("OpHabitacion");
-                        if (cuartitos != null) {
-                            for (int i = 0; i < cuartitos.length; i++) {
-                                miau = Integer.parseInt(cuartitos[i]);
-                                reCuarto[i] = miau;
-                            }
-                            guardar(reCuarto);
-                        }
-                        llave = !llave;
-                  
 
-                %>
-                
-                <jsp:setProperty name="Habitaciones" property="habitacion" value="<%=reCuarto%>"/>
 
-                <button type="submit" class="btn btn-primary" onclick="guardar(reCuarto )" >Submit</button>
+
+
+
+                <button type="submit" class="btn btn-primary" >Submit</button> 
 
 
             </form>
