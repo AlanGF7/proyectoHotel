@@ -26,13 +26,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-        <title>Mostar habitaciones</title>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="Recursitos/getterCSSHotel.css" rel="stylesheet"/>
+        <title>Habitaciones</title>
     </head>
     <body>
         <jsp:useBean id="Habitaciones" class="datos.Registro" scope="session"/>
+        <div class="jumbotron" id="mainContainerGetter">
         <h1>Aquí se muestran todas las habitaciones</h1>
-
-
+        <hr>
         <%
             String hab0 = "";
             String hab1 = "";
@@ -103,34 +106,10 @@
 
         <%            if (hab0 == "DESOCUPADA") {
         %>
-        <br>
-        <br>
-        HABITACIÓN 0: <jsp:getProperty name="Habitaciones" property="cuarto0"/>
-        <br>
-        HABITACIÓN 1: <jsp:getProperty name="Habitaciones" property="cuarto1"/>
-        <br>
-        HABITACIÓN 2: <jsp:getProperty name="Habitaciones" property="cuarto2"/>
-        <br>
-        HABITACIÓN 3: <jsp:getProperty name="Habitaciones" property="cuarto3"/>
-        <br>
-        HABITACIÓN 4: <jsp:getProperty name="Habitaciones" property="cuarto4"/>
-        <br>
-        HABITACIÓN 5: <jsp:getProperty name="Habitaciones" property="cuarto5"/>
-        <br>
-        HABITACIÓN 6: <jsp:getProperty name="Habitaciones" property="cuarto6"/>
-        <br>
-        HABITACIÓN 7: <jsp:getProperty name="Habitaciones" property="cuarto7"/>
-        <br>
-        HABITACIÓN 8: <jsp:getProperty name="Habitaciones" property="cuarto8"/>
-        <br>
-        HABITACIÓN 9: <jsp:getProperty name="Habitaciones" property="cuarto9"/>
-
 
         <%
         } else {
         %>
-        <br>
-        <br>
         <jsp:setProperty name="Habitaciones" property="cuarto0" value="<%=hab0%>"/>
         <jsp:setProperty name="Habitaciones" property="cuarto1" value="<%=hab1%>"/>
         <jsp:setProperty name="Habitaciones" property="cuarto2" value="<%=hab2%>"/>
@@ -147,33 +126,18 @@
 
         %>
 
-      
-
-
-        <%
-        %>
-
-        <%
-        %>
-
-
-
-        <br>
-
-        <br>
-        <br>
-
         <div class="container">
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
 
                 <div class="col">
                     <div class="p-3 fw-normal">
-                        <%                            if (request.getParameter("OpHabitacion0") != null) {
+                        <%                            
+                            if (request.getParameter("OpHabitacion0") != null || hab0 != "DESOCUPADA") {
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 0: <jsp:getProperty name="Habitaciones" property="cuarto0"/>  
+                            <div class="p-3 fw-normal bg-danger"  id="divHabitaciones" name="divHabitaciones">
+                                <h1>01</h1><hr style="color: black; height: 3px;"> <jsp:getProperty name="Habitaciones" property="cuarto0"/>  
                             </div>
                         </div>
 
@@ -181,8 +145,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 0: <jsp:getProperty name="Habitaciones" property="cuarto0"/>
+                            <div class="p-3 fw-normal bg-success"  id="divHabitaciones" name="divHabitaciones">
+                                <h1>01</h1><hr style="color: whitesmoke; height: 3px;"> <jsp:getProperty name="Habitaciones" property="cuarto0"/>
                             </div>
                         </div>                
 
@@ -200,8 +164,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 1: <jsp:getProperty name="Habitaciones" property="cuarto1"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>02</h1><hr style="color: black; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto1"/>  
                             </div>
                         </div>
 
@@ -209,8 +173,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 1: <jsp:getProperty name="Habitaciones" property="cuarto1"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>02</h1><hr style="color: whitesmoke; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto1"/>
                             </div>
                         </div>                
 
@@ -228,8 +192,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 2: <jsp:getProperty name="Habitaciones" property="cuarto2"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>03</h1><hr style="color: black; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto2"/>  
                             </div>
                         </div>
 
@@ -237,8 +201,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 2: <jsp:getProperty name="Habitaciones" property="cuarto2"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>03</h1><hr style="color: whitesmoke; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto2"/>
                             </div>
                         </div>                
 
@@ -256,8 +220,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 3: <jsp:getProperty name="Habitaciones" property="cuarto3"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>04</h1><hr style="color: black; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto3"/>  
                             </div>
                         </div>
 
@@ -265,8 +229,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 3: <jsp:getProperty name="Habitaciones" property="cuarto3"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>04</h1><hr style="color: whitesmoke; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto3"/>
                             </div>
                         </div>                
 
@@ -284,8 +248,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 4: <jsp:getProperty name="Habitaciones" property="cuarto4"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>05</h1><hr style="color: black; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto4"/>  
                             </div>
                         </div>
 
@@ -293,8 +257,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 4: <jsp:getProperty name="Habitaciones" property="cuarto4"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>05</h1><hr style="color: whitesmoke; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto4"/>
                             </div>
                         </div>                
 
@@ -312,8 +276,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 5: <jsp:getProperty name="Habitaciones" property="cuarto5"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>06</h1><hr style="color: black; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto5"/>  
                             </div>
                         </div>
 
@@ -321,8 +285,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 5: <jsp:getProperty name="Habitaciones" property="cuarto5"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>06</h1><hr style="color: whitesmoke; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto5"/>
                             </div>
                         </div>                
 
@@ -340,8 +304,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 6: <jsp:getProperty name="Habitaciones" property="cuarto6"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>07</h1><hr style="color: black; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto6"/>  
                             </div>
                         </div>
 
@@ -349,8 +313,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 6: <jsp:getProperty name="Habitaciones" property="cuarto6"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>07</h1><hr style="color: whitesmoke; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto6"/>
                             </div>
                         </div>                
 
@@ -368,8 +332,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 7: <jsp:getProperty name="Habitaciones" property="cuarto7"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>08</h1><hr style="color: black; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto7"/>  
                             </div>
                         </div>
 
@@ -377,8 +341,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 7: <jsp:getProperty name="Habitaciones" property="cuarto7"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>08</h1><hr style="color: whitesmoke; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto7"/>
                             </div>
                         </div>                
 
@@ -396,8 +360,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 8: <jsp:getProperty name="Habitaciones" property="cuarto8"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>09</h1><hr style="color: black; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto8"/>  
                             </div>
                         </div>
 
@@ -405,8 +369,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 8: <jsp:getProperty name="Habitaciones" property="cuarto8"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>09</h1><hr style="color: whitesmoke; height: 3px;">  <jsp:getProperty name="Habitaciones" property="cuarto8"/>
                             </div>
                         </div>                
 
@@ -424,8 +388,8 @@
                         %>
 
                         <div class="col">
-                            <div class="p-3 fw-normal bg-danger">
-                                HABITACIÓN 9: <jsp:getProperty name="Habitaciones" property="cuarto9"/>  
+                            <div class="p-3 fw-normal bg-danger" id="divHabitaciones" name="divHabitaciones">
+                                <h1>10</h1><hr style="color: black; height: 3px;"> <jsp:getProperty name="Habitaciones" property="cuarto9"/>  
                             </div>
                         </div>
 
@@ -433,8 +397,8 @@
                         } else {
                         %>
                         <div class="col">
-                            <div class="p-3 fw-normal bg-success">
-                                HABITACIÓN 9: <jsp:getProperty name="Habitaciones" property="cuarto9"/>
+                            <div class="p-3 fw-normal bg-success" id="divHabitaciones" name="divHabitaciones">
+                                <h1>10</h1><hr style="color: whitesmoke; height: 3px;"> <jsp:getProperty name="Habitaciones" property="cuarto9"/>
                             </div>
                         </div>                
 
@@ -450,16 +414,20 @@
 
 
             </div>
-            <br>
-            <br>
-            <br>
-            <a class="btn btn-success" href="index.html" role="button">Regresar a inicio</a>
-            <a class="btn btn-warning" href="setterApartar.jsp" role="button" onclick="!salida">Regresar a la selección</a>
+
+            <div class="jumbotron">
+                <a href="index.html">
+                    <button class="btn btn-info" id="btnBackInicio" name="btnBackInicio">Regresar al inicio</button>
+                </a>
+            </div>
+            
+            
             <%                if (salida) {
           
                     salida = !salida;
                 }
             %>
+        </div>
         </div>
 
     </body>

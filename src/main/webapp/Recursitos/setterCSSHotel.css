@@ -1,0 +1,28 @@
+body{
+    background-color: beige;
+}
+
+#mainContainerSetter{
+    margin: 20px;
+    padding: 20px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 25px;
+    background-color: blanchedalmond;
+    border-color: bisque;
+    text-align: center;
+}
+
+#btnSendSet{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: green;
+    font-size: 25px;
+    transition-duration: 0.4s;
+}
+
+#btnSendSet:hover{
+    background-color: darkgreen;
+}
+
